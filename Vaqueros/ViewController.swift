@@ -172,6 +172,72 @@ class ViewController: UIViewController {
                 matchStart = false
                 p1Turn = true
             }
+            else if p1Attack && p2Guard {
+                var p1Bullets = p1Ammo.text!
+                var p1NewAmmo = Int(p1Bullets)!
+                p1NewAmmo = p1NewAmmo - 1
+                
+                matchStart = false
+                p1Turn = true
+            }
+            else if p1Guard && p2Attack {
+                var p2Bullets = p2Ammo.text!
+                var p2NewAmmo = Int(p2Bullets)!
+                p2NewAmmo = p2NewAmmo - 1
+                
+                matchStart = false
+                p1Turn = true
+            }
+            else if p1Attack && p2Reload {
+                var p1Bullets = p1Ammo.text!
+                var p1NewAmmo = Int(p1Bullets)!
+                p1NewAmmo = p1NewAmmo - 1
+                
+                var p2Lives = p2Life.text!
+                var p2NewLife = Int(p2Lives)!
+                p2NewLife = p2NewLife - 1
+                p2Life.text = String(p2NewLife)
+                
+                var p2Bullets = p2Ammo.text!
+                var p2NewAmmo = Int(p2Bullets)!
+                p2NewAmmo = p2NewAmmo + 1
+                
+                matchStart = false
+                p1Turn = true
+            }
+            else if p1Reload && p2Attack {
+                var p2Bullets = p2Ammo.text!
+                var p2NewAmmo = Int(p2Bullets)!
+                p2NewAmmo = p2NewAmmo - 1
+                
+                var p1Lives = p1Life.text!
+                var p1NewLife = Int(p1Lives)!
+                p1NewLife = p1NewLife - 1
+                p1Life.text = String(p1NewLife)
+                
+                var p1Bullets = p1Ammo.text!
+                var p1NewAmmo = Int(p1Bullets)!
+                p1NewAmmo = p1NewAmmo + 1
+                
+                matchStart = false
+                p1Turn = true
+            }
+            else if p1Guard && p2Reload {
+                var p2Bullets = p2Ammo.text!
+                var p2NewAmmo = Int(p2Bullets)!
+                p2NewAmmo = p2NewAmmo + 1
+                
+                matchStart = false
+                p1Turn = true
+            }
+            else if p1Reload && p2Guard {
+                var p1Bullets = p1Ammo.text!
+                var p1NewAmmo = Int(p1Bullets)!
+                p1NewAmmo = p1NewAmmo + 1
+                
+                matchStart = false
+                p1Turn = true
+            }
         }
     }
     
