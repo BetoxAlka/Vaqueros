@@ -315,7 +315,7 @@ class ViewController: UIViewController {
         var isGameOver = false
         let p1Lives = p1Life.text
         let p2Lives = p2Life.text
-        if p1Lives == "0" {
+        if p1Lives == "0" && p2Lives != "0" {
             isGameOver = true
             start.isHidden = false
             go.isHidden = true
@@ -323,7 +323,7 @@ class ViewController: UIViewController {
             p2Label.isHidden = true
             showAlert(message: "P2 WINS")
         }
-        else if p2Lives == "0" {
+        else if p2Lives == "0" && p1Lives != "0"{
             isGameOver = true
             start.isHidden = false
             go.isHidden = true
