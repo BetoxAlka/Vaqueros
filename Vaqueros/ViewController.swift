@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var start: UIButton!
     @IBOutlet weak var go: UIButton!
     
+    @IBOutlet weak var p1Label: UILabel!
+    @IBOutlet weak var p2Label: UILabel!
     @IBOutlet weak var p1Life: UILabel!
     @IBOutlet weak var p1Ammo: UILabel!
     @IBOutlet weak var p2Life: UILabel!
@@ -38,7 +40,9 @@ class ViewController: UIViewController {
             p1Guard = false
             p1Reload = false
             p1Turn = false
+            p1Label.isHidden = true
             p2Turn = true
+            p2Label.isHidden = false
         }
     }
     
@@ -48,7 +52,9 @@ class ViewController: UIViewController {
             p1Guard = true
             p1Reload = false
             p1Turn = false
+            p1Label.isHidden = true
             p2Turn = true
+            p2Label.isHidden = false
         }
     }
     
@@ -58,7 +64,9 @@ class ViewController: UIViewController {
             p1Guard = false
             p1Reload = true
             p1Turn = false
+            p1Label.isHidden = true
             p2Turn = true
+            p2Label.isHidden = false
         }
     }
     
@@ -68,6 +76,7 @@ class ViewController: UIViewController {
             p2Guard = false
             p2Reload = false
             p2Turn = false
+            p2Label.isHidden = true
             matchStart = true
             go.isHidden = false
         }
@@ -79,6 +88,7 @@ class ViewController: UIViewController {
             p2Guard = true
             p2Reload = false
             p2Turn = false
+            p2Label.isHidden = true
             matchStart = true
             go.isHidden = false
         }
@@ -90,6 +100,7 @@ class ViewController: UIViewController {
             p2Guard = false
             p2Reload = true
             p2Turn = false
+            p2Label.isHidden = true
             matchStart = true
             go.isHidden = false
         }
@@ -102,7 +113,9 @@ class ViewController: UIViewController {
         p2Ammo.text = "0"
         start.isHidden = true
         p1Turn = true
+        p1Label.isHidden = false
         p2Turn = false
+        p2Label.isHidden = true
         p1Attack = false
         p2Attack = false
         p1Guard = false
@@ -137,6 +150,7 @@ class ViewController: UIViewController {
                     matchStart = false
                     go.isHidden = true
                     p1Turn = true
+                    p1Label.isHidden = false
                 }
                 else if p1Bullets != "0" && p2Bullets == "0" {
                     var p1NewAmmo = Int(p1Bullets)!
@@ -151,6 +165,7 @@ class ViewController: UIViewController {
                     matchStart = false
                     go.isHidden = true
                     p1Turn = true
+                    p1Label.isHidden = false
                 }
                 else if p1Bullets == "0" && p2Bullets != "0" {
                     var p2NewAmmo = Int(p2Bullets)!
@@ -165,17 +180,20 @@ class ViewController: UIViewController {
                     matchStart = false
                     go.isHidden = true
                     p1Turn = true
+                    p1Label.isHidden = false
                 }
                 else if p1Bullets == "0" && p2Bullets == "0" {
                     matchStart = false
                     go.isHidden = true
                     p1Turn = true
+                    p1Label.isHidden = false
                 }
             }
             else if p1Guard && p2Guard {
                 matchStart = false
                 go.isHidden = true
                 p1Turn = true
+                p1Label.isHidden = false
             }
             else if p1Reload && p2Reload {
                 let p1Bullets = p1Ammo.text!
@@ -190,6 +208,7 @@ class ViewController: UIViewController {
                 matchStart = false
                 go.isHidden = true
                 p1Turn = true
+                p1Label.isHidden = false
             }
             else if p1Attack && p2Guard {
                 let p1Bullets = p1Ammo.text!
@@ -200,6 +219,7 @@ class ViewController: UIViewController {
                 matchStart = false
                 go.isHidden = true
                 p1Turn = true
+                p1Label.isHidden = false
             }
             else if p1Guard && p2Attack {
                 let p2Bullets = p2Ammo.text!
@@ -210,6 +230,7 @@ class ViewController: UIViewController {
                 matchStart = false
                 go.isHidden = true
                 p1Turn = true
+                p1Label.isHidden = false
             }
             else if p1Attack && p2Reload {
                 let p1Bullets = p1Ammo.text!
@@ -230,6 +251,7 @@ class ViewController: UIViewController {
                 matchStart = false
                 go.isHidden = true
                 p1Turn = true
+                p1Label.isHidden = false
             }
             else if p1Reload && p2Attack {
                 let p2Bullets = p2Ammo.text!
@@ -249,6 +271,7 @@ class ViewController: UIViewController {
                 matchStart = false
                 go.isHidden = true
                 p1Turn = true
+                p1Label.isHidden = false
             }
             else if p1Guard && p2Reload {
                 let p2Bullets = p2Ammo.text!
@@ -259,6 +282,7 @@ class ViewController: UIViewController {
                 matchStart = false
                 go.isHidden = true
                 p1Turn = true
+                p1Label.isHidden = false
             }
             else if p1Reload && p2Guard {
                 let p1Bullets = p1Ammo.text!
@@ -269,11 +293,13 @@ class ViewController: UIViewController {
                 matchStart = false
                 go.isHidden = true
                 p1Turn = true
+                p1Label.isHidden = false
             }
             if !checkGameOver() {
                 matchStart = false
                 go.isHidden = true
                 p1Turn = true
+                p1Label.isHidden = false
             }
         }
     }
@@ -293,18 +319,24 @@ class ViewController: UIViewController {
             isGameOver = true
             start.isHidden = false
             go.isHidden = true
+            p1Label.isHidden = true
+            p2Label.isHidden = true
             showAlert(message: "P2 WINS")
         }
         else if p2Lives == "0" {
             isGameOver = true
             start.isHidden = false
             go.isHidden = true
+            p1Label.isHidden = true
+            p2Label.isHidden = true
             showAlert(message: "P1 WINS")
         }
         else if p1Lives == "0" && p2Lives == "0" {
             isGameOver = true
             start.isHidden = false
             go.isHidden = true
+            p1Label.isHidden = true
+            p2Label.isHidden = true
             showAlert(message: "It's a DRAW")
         }
         return isGameOver
