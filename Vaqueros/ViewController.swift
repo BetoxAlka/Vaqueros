@@ -35,6 +35,8 @@ class ViewController: UIViewController {
     @IBAction func p1Shoots(_ sender: UIButton) {
         if p1Turn {
             p1Attack = true
+            p1Guard = false
+            p1Reload = false
             p1Turn = false
             p2Turn = true
         }
@@ -42,7 +44,9 @@ class ViewController: UIViewController {
     
     @IBAction func p1Shields(_ sender: UIButton) {
         if p1Turn {
+            p1Attack = false
             p1Guard = true
+            p1Reload = false
             p1Turn = false
             p2Turn = true
         }
@@ -50,6 +54,8 @@ class ViewController: UIViewController {
     
     @IBAction func p1Reloads(_ sender: UIButton) {
         if p1Turn {
+            p1Attack = false
+            p1Guard = false
             p1Reload = true
             p1Turn = false
             p2Turn = true
@@ -59,6 +65,8 @@ class ViewController: UIViewController {
     @IBAction func p2Shoots(_ sender: UIButton) {
         if p2Turn {
             p2Attack = true
+            p2Guard = false
+            p2Reload = false
             p2Turn = false
             matchStart = true
             go.isHidden = false
@@ -67,7 +75,9 @@ class ViewController: UIViewController {
     
     @IBAction func p2Shields(_ sender: UIButton) {
         if p2Turn {
+            p2Attack = false
             p2Guard = true
+            p2Reload = false
             p2Turn = false
             matchStart = true
             go.isHidden = false
@@ -76,6 +86,8 @@ class ViewController: UIViewController {
     
     @IBAction func p2Reloads(_ sender: UIButton) {
         if p2Turn {
+            p2Attack = false
+            p2Guard = false
             p2Reload = true
             p2Turn = false
             matchStart = true
@@ -91,8 +103,12 @@ class ViewController: UIViewController {
         start.isHidden = true
         p1Turn = true
         p2Turn = false
+        p1Attack = false
+        p2Attack = false
         p1Guard = false
         p2Guard = false
+        p1Reload = false
+        p2Reload = false
         matchStart = false
     }
     
@@ -179,6 +195,7 @@ class ViewController: UIViewController {
                 let p1Bullets = p1Ammo.text!
                 var p1NewAmmo = Int(p1Bullets)!
                 p1NewAmmo = p1NewAmmo - 1
+                p1Ammo.text = String(p1NewAmmo)
                 
                 matchStart = false
                 go.isHidden = true
@@ -188,6 +205,7 @@ class ViewController: UIViewController {
                 let p2Bullets = p2Ammo.text!
                 var p2NewAmmo = Int(p2Bullets)!
                 p2NewAmmo = p2NewAmmo - 1
+                p2Ammo.text = String(p2NewAmmo)
                 
                 matchStart = false
                 go.isHidden = true
@@ -197,6 +215,7 @@ class ViewController: UIViewController {
                 let p1Bullets = p1Ammo.text!
                 var p1NewAmmo = Int(p1Bullets)!
                 p1NewAmmo = p1NewAmmo - 1
+                p1Ammo.text = String(p1NewAmmo)
                 
                 let p2Lives = p2Life.text!
                 var p2NewLife = Int(p2Lives)!
@@ -206,6 +225,7 @@ class ViewController: UIViewController {
                 let p2Bullets = p2Ammo.text!
                 var p2NewAmmo = Int(p2Bullets)!
                 p2NewAmmo = p2NewAmmo + 1
+                p2Ammo.text = String(p2NewAmmo)
                 
                 matchStart = false
                 go.isHidden = true
@@ -215,6 +235,7 @@ class ViewController: UIViewController {
                 let p2Bullets = p2Ammo.text!
                 var p2NewAmmo = Int(p2Bullets)!
                 p2NewAmmo = p2NewAmmo - 1
+                p2Ammo.text = String(p2NewAmmo)
                 
                 let p1Lives = p1Life.text!
                 var p1NewLife = Int(p1Lives)!
@@ -233,6 +254,7 @@ class ViewController: UIViewController {
                 let p2Bullets = p2Ammo.text!
                 var p2NewAmmo = Int(p2Bullets)!
                 p2NewAmmo = p2NewAmmo + 1
+                p2Ammo.text = String(p2NewAmmo)
                 
                 matchStart = false
                 go.isHidden = true
@@ -242,7 +264,13 @@ class ViewController: UIViewController {
                 let p1Bullets = p1Ammo.text!
                 var p1NewAmmo = Int(p1Bullets)!
                 p1NewAmmo = p1NewAmmo + 1
+                p1Ammo.text = String(p1NewAmmo)
                 
+                matchStart = false
+                go.isHidden = true
+                p1Turn = true
+            }
+            if !checkGameOver() {
                 matchStart = false
                 go.isHidden = true
                 p1Turn = true
