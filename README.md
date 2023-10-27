@@ -2,7 +2,7 @@
 ### Link para ver video de prueba de juego
 https://drive.google.com/drive/folders/1-5bxVkTvCmi2psv8hUwlg1JWM96mCyaQhttps://drive.google.com/drive/folders/1-5bxVkTvCmi2psv8hUwlg1JWM96mCyaQ 
 
-Es un juego simple en 2D realizado en IOS utilizando Swift y Xcode. Este juego es el juego conocido de vaquerito en el que juegas contra la computadora y tienes 3 opciones recargar, escudo disparar, donde no puedes disparar si no recargaste antes.
+Es un juego simple en 2D realizado en IOS utilizando Swift y Xcode. Este juego es el juego conocido de vaquerito en el que juegas contra otro jugador y tienes 3 opciones recargar, escudo disparar, donde no puedes disparar si no recargaste antes.
 ### Como Jugar
 Cada jugador por ronda puede hacer solo una acción
 - Recargar
