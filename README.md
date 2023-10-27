@@ -26,3 +26,6 @@ Para ganar debes de agotar las vidas de tu rival pero hay una serie de condicion
 ### Video
 * [Link al Video]([https://github.com/juanpemedina/Reto_IoT_TC1004B.501/wiki/Creaci%C3%B3n-de-una-base-de-datos-en-Firebase#qu%C3%A9-es-firebase](https://drive.google.com/drive/folders/1-5bxVkTvCmi2psv8hUwlg1JWM96mCyaQ)https://drive.google.com/drive/folders/1-5bxVkTvCmi2psv8hUwlg1JWM96mCyaQ)
 ### Creditos
+David Alberto Alvarado
+Juan Pedro Medina
+Santiago Santos
