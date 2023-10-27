@@ -19,4 +19,6 @@ Es un juego simple en 2D realizado en IOS utilizando Swift y Xcode. Este juego e
 2. Abre ```Vaqueros.xcodeproj``` en Xcode
 3. Cree y ejecute la aplicación en su dispositivo o simulador.
 
+### Video
+* [Link al Video]([https://github.com/juanpemedina/Reto_IoT_TC1004B.501/wiki/Creaci%C3%B3n-de-una-base-de-datos-en-Firebase#qu%C3%A9-es-firebase](https://drive.google.com/drive/folders/1-5bxVkTvCmi2psv8hUwlg1JWM96mCyaQ)https://drive.google.com/drive/folders/1-5bxVkTvCmi2psv8hUwlg1JWM96mCyaQ)
 ### Creditos
