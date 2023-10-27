@@ -1,3 +1,3 @@
 # Vaqueros
 
-CRUZ CRUZ CURZ
+### Introdución
