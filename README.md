@@ -4,11 +4,15 @@ https://drive.google.com/drive/folders/1-5bxVkTvCmi2psv8hUwlg1JWM96mCyaQhttps://
 
 Es un juego simple en 2D realizado en IOS utilizando Swift y Xcode. Este juego es el juego conocido de vaquerito en el que juegas contra la computadora y tienes 3 opciones recargar, escudo disparar, donde no puedes disparar si no recargaste antes.
 ### Como Jugar
-1. Paso
-2. Paso
-3. Paso
-4. Paso
-5. Paso
+Cada jugador por ronda puede hacer solo una acción
+- Recargar
+- Disparar
+- Protegerse
+Para ganar debes de agotar las vidas de tu rival pero hay una serie de condiciones para lograr esto
+-Solo puedes dañar si tienes al menos una bala en el cartucho, para conseguir balas debes de tomar un turno de recarga por cada bala que desees tener
+-Tienes 3 vidas, si pierdes todas, pierdes el juego o empatas(en caso de que ambos las pierdan en el mismo turno)
+-Para quitar una vida, el rival no debe de protegerse cuando dispares
+-Puedes guardar mas de una bala, solo toma en cuenta que cada vez que recargues o dispares puedes ser dañado por una bala también
 
 ### Requerimientos 
 - Computadora Apple con Xcode
